@@ -1,6 +1,6 @@
 import { createServer, Model } from "miragejs"
 
-
+if (process.env.NODE_ENV === "development") {
 createServer({
     models: {
         vans: Model,
@@ -29,3 +29,4 @@ createServer({
         })
     }
 })
+}
