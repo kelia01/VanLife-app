@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -23,9 +23,9 @@ const App = () => {
             Rent the perfect van to make perfect trip
           </p>
         </div>
-        <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-md mt-8 px-8 py-3">
+        <Link to='/about'><button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-md mt-8 px-8 py-3">
           Find your van
-        </button>
+        </button></Link>
       </div>
 
       <Footer />

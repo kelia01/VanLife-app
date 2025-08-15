@@ -4,12 +4,14 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import App from './App.tsx'
 import About from './pages/About.tsx'
 import Vans from './pages/Vans.tsx'
+import { makeServer } from "./server.js";
+import "./server.js";
+import VanDetail from './pages/VanDetail.tsx'
 
 if (process.env.NODE_ENV === "development") {
-  import('./server').then(() => {
-    console.log("Mock server started for development")
-  })
+  makeServer();
 }
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
@@ -17,6 +19,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path='/' element={<App />}/>
       <Route path='/about' element={<About />}/>
       <Route path='/vans' element={<Vans />}/>
+      <Route path='/vans/:id' element={<VanDetail />}/>
      </Routes>
     </BrowserRouter>
   </StrictMode>,
