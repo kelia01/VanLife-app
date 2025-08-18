@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 const About = () => {
   return (
     <>
-      <Navbar />
       <div className="w-full h-[50vh] md:h-[60vh]">
       <img src="../public/about.png" alt="van adventure" className="w-full h-full object-cover"/>
       </div>

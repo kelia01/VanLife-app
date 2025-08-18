@@ -5,7 +5,6 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <div>
-      <Navbar />
       <div className="relative w-full h-[90vh]">
         <img
           src="../public/home.png"
