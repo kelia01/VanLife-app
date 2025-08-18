@@ -41,7 +41,8 @@ const Vans = () => {
 
         <div className="grid gap-6 md:grid-cols-2">
           {vans.map((van) => (
-            <Link to={`/van/${van.id}`}><div key={van.id} className="bg-white rounded shadow">
+            <div key={van.id} className="bg-white rounded shadow">
+                <Link to={`/van/${van.id}`}>
               <img
                 src={van.imageUrl}
                 alt={van.name}
@@ -68,7 +69,8 @@ const Vans = () => {
                   {van.type}{" "}
                 </span>
               </div>
-            </div></Link>
+              </Link>
+            </div>
           ))}
         </div>
       </div>
