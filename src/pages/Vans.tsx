@@ -20,6 +20,7 @@ const Vans = () => {
   }, []);
   return (
     <>
+    
       <div className="bg-amber-50 min-h-screen p-4">
         <h1 className="font-bold text-2xl md:text-3xl mb-4">
           Explore our van options
