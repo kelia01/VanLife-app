@@ -9,6 +9,7 @@ const Navbar = () => {
         <header className="text-black text-4xl cursor-pointer">#VANLIFE</header>
       </Link>
       <ul className="text-gray-500 font-semibold flex space-x-8">
+        <li><Link to='/Host'>Host</Link></li>
         <li><Link to='/about'>About</Link></li>
         <li><Link to='/vans'>Vans</Link></li>
       </ul>
