@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import VanDetail from "./VanDetail";
 import { Link} from 'react-router-dom'
 
 interface van {

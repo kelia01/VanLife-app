@@ -26,8 +26,6 @@ const App = () => {
           Find your van
         </button></Link>
       </div>
-
-      <Footer />
     </div>
   );
 };
