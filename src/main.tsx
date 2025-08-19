@@ -8,9 +8,9 @@ import { makeServer } from "./server.js";
 import "./server.js";
 import VanDetail from './pages/Vans/VanDetail.tsx'
 import Layout from './components/Layout.tsx'
-import Dashboard from './pages/Vans/Host/Dashboard.tsx'
-import Income from './pages/Vans/Host/Income.tsx'
-import Reviews from './pages/Vans/Host/Reviews.tsx'
+import Dashboard from './pages/Host/Dashboard.tsx'
+import Income from './pages/Host/Income.tsx'
+import Reviews from './pages/Host/Reviews.tsx'
 
 if (process.env.NODE_ENV === "development") {
   makeServer();
