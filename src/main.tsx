@@ -8,6 +8,7 @@ import Vans from './pages/Vans.tsx'
 import { makeServer } from "./server.js";
 import "./server.js";
 import VanDetail from './pages/VanDetail.tsx'
+import Layout from './components/Layout.tsx'
 
 if (process.env.NODE_ENV === "development") {
   makeServer();
@@ -16,12 +17,13 @@ if (process.env.NODE_ENV === "development") {
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-    <Navbar />
      <Routes>
+      <Route element={<Layout />}>
       <Route path='/' element={<App />}/>
       <Route path='/about' element={<About />}/>
       <Route path='/vans' element={<Vans />}/>
       <Route path='/van/:id' element={<VanDetail />}/>
+      </Route>
      </Routes>
     </BrowserRouter>
   </StrictMode>,
