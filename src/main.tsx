@@ -21,15 +21,15 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
      <Routes>
-      <Route element={<Layout />}>
-      <Route path='/' element={<App />}/>
-      <Route path='/about' element={<About />}/>
-      <Route path='/vans' element={<Vans />}/>
-      <Route path='/van/:id' element={<VanDetail />}/>
-      <Route path='/Host' element={<HostLayout />}>
-      <Route path='/Host' element={<Dashboard />}/>
-      <Route path='/Host/Income' element={<Income />}/>
-      <Route path='/Host/Reviews' element={<Reviews />}/>
+      <Route path='/' element={<Layout />}>
+      <Route index element={<App />}/>
+      <Route path='about' element={<About />}/>
+      <Route path='vans' element={<Vans />}/>
+      <Route path='van/:id' element={<VanDetail />}/>
+      <Route path='Host' element={<HostLayout />}>
+      <Route path='' element={<Dashboard />}/>
+      <Route path='Income' element={<Income />}/>
+      <Route path='Reviews' element={<Reviews />}/>
       </Route>
       </Route>
      </Routes>
