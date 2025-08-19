@@ -8,9 +8,10 @@ import { makeServer } from "./server.js";
 import "./server.js";
 import VanDetail from './pages/Vans/VanDetail.tsx'
 import Layout from './components/Layout.tsx'
-import Dashboard from './pages/Host/Dashboard.tsx'
 import Income from './pages/Host/Income.tsx'
 import Reviews from './pages/Host/Reviews.tsx'
+import HostLayout from './components/HostLayout.tsx'
+import Dashboard from './pages/Host/Dashboard.tsx'
 
 if (process.env.NODE_ENV === "development") {
   makeServer();
@@ -25,7 +26,8 @@ createRoot(document.getElementById('root')!).render(
       <Route path='/about' element={<About />}/>
       <Route path='/vans' element={<Vans />}/>
       <Route path='/van/:id' element={<VanDetail />}/>
-      <Route path='/Host' element={<Dashboard />}>
+      <Route path='/Host' element={<HostLayout />}>
+      <Route path='/Host' element={<Dashboard />}/>
       <Route path='/Host/Income' element={<Income />}/>
       <Route path='/Host/Reviews' element={<Reviews />}/>
       </Route>
