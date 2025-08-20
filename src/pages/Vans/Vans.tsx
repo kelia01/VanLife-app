@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link} from 'react-router-dom'
+import { Link, NavLink, useSearchParams} from 'react-router-dom'
 
 interface van {
   id: string;
@@ -11,11 +11,14 @@ interface van {
 
 const Vans = () => {
   const [vans, setVans] = useState<van[]>([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const typeFilter = searchParams.get('type')
   useEffect(() => {
     fetch("/api/vans")
       .then((res) => res.json())
       .then((data) => setVans(data.vans));
   }, []);
+  const typesArr = typeFilter ? vans.filter(van => van.type.toLowerCase() === typeFilter.toLowerCase()) : vans
   return (
     <>
     
@@ -23,22 +26,27 @@ const Vans = () => {
         <h1 className="font-bold text-2xl md:text-3xl mb-4">
           Explore our van options
         </h1>
-        <div className="flex gap-2 mb-6">
-          {["Simple", "Luxury", "Rugged"].map((type) => (
+        <div className="flex gap-8 mb-6">
+          {["Simple", "Luxury", "Rugged"]
+          .map((type) => (
+            <NavLink to={`?type=${type}`} key={type}>
             <button
-              key={type}
+              
               className="px-3 py-1 border border-gray-300 rounded hover: bg-gray-200"
-            >
+              >
               {type}
             </button>
+                </NavLink>
           ))}
-          <button className="ml-auto text-sm text-gray-500 hover:underline">
+          <NavLink to='.'>
+          <button className="ml-auto text-sm text-black font-semibold underline hover:underline">
             Clear filters
           </button>
+          </NavLink>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {vans.map((van) => (
+          {typesArr.map((van) => (
             <div key={van.id} className="bg-white rounded shadow">
                 <Link to={`/van/${van.id}`}>
               <img
