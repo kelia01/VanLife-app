@@ -39,9 +39,10 @@ const Vans = () => {
                 </NavLink>
           ))}
           <NavLink to='.'>
-          <button className="ml-auto text-sm text-black font-semibold underline hover:underline">
+          {typeFilter ? (
+            <button className="ml-auto text-sm text-black font-semibold underline hover:underline">
             Clear filters
-          </button>
+          </button>) : null}
           </NavLink>
         </div>
 
