@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams} from "react-router-dom";
+import { useParams, Link} from "react-router-dom";
 
 interface Van {
   id: string;
@@ -22,9 +22,13 @@ const VanDetail = () => {
 
   if (!van) {
     return (
+      <>
+      <Link to='..' relative='path' 
+    >&larr; <span>Back to all vans</span></Link>
       <div className="flex items-center justify-center min-h-screen">
         <p className="text-gray-600">Loading...</p>
       </div>
+      </>
     );
   }
 

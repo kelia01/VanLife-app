@@ -21,6 +21,17 @@ const Vans = () => {
   const typesArr = typeFilter
     ? vans.filter((van) => van.type.toLowerCase() === typeFilter.toLowerCase())
     : vans;
+
+    const handleFilterChange = (key: string, val: string) => {
+      setSearchParams(prevParams => {
+        if(val === null) {
+          prevParams.delete(key)
+        } else {
+          prevParams.set(key, val)
+        }
+        return prevParams
+      })
+    } 
   return (
     <>
       <div className="bg-amber-50 min-h-screen p-4">
@@ -33,7 +44,8 @@ const Vans = () => {
               to={`?type=${type}`}
               key={type}
             >
-              <button className={`px-3 py-1 rounded ${type === "simple"
+              <button className={`px-3 py-1 rounded
+              ${type === "simple"
                     ? "bg-orange-200 text-orange-800"
                     : type === "luxury"
                     ? "bg-black text-white"
