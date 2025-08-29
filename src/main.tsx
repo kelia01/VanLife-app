@@ -24,7 +24,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path='/' element={<Layout />}>
       <Route index element={<App />}/>
       <Route path='about' element={<About />}/>
-      <Route path='vans' element={<Vans />}/>
+      <Route path='van' element={<Vans />}/>
       <Route path='van/:id' element={<VanDetail />}/>
       <Route path='Host' element={<HostLayout />}>
       <Route path='' element={<Dashboard />}/>

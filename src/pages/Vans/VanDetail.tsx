@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Link} from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 interface Van {
   id: string;
@@ -23,11 +23,9 @@ const VanDetail = () => {
   if (!van) {
     return (
       <>
-      <Link to='..' relative='path' 
-    >&larr; <span>Back to all vans</span></Link>
-      <div className="flex items-center justify-center min-h-screen">
-        <p className="text-gray-600">Loading...</p>
-      </div>
+        <div className="flex items-center justify-center min-h-screen">
+          <p className="text-gray-600">Loading...</p>
+        </div>
       </>
     );
   }
@@ -35,7 +33,9 @@ const VanDetail = () => {
   return (
     <>
       <div className="bg-amber-50 min-h-screen p-6">
-
+        <Link to=".." relative="path">
+          &larr; <span className="m-auto text-xl">Back to all vans</span>
+        </Link>
         <div className="bg-white rounded-lg shadow-md p-6 max-w-2xl mx-auto">
           <img
             src={van.imageUrl}
