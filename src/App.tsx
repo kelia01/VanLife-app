@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
+import { ThemeProvider } from './ContextTheme/ThemeContext';
+import { ThemeToggle } from './ContextTheme/ThemeToggle';
+
 const App = () => {
   return (
+    <ThemeProvider>
     <div>
       <div className="relative w-full h-[90vh]">
+        
         <img
           src="../public/home.png"
           alt=""
@@ -22,8 +27,10 @@ const App = () => {
         <Link to='/about'><button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-md mt-8 px-8 py-3">
           Find your van
         </button></Link>
+        <ThemeToggle />
       </div>
     </div>
+    </ThemeProvider>
   );
 };
 
